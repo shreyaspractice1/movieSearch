@@ -1,0 +1,19 @@
+
+<div class="container-fluid" *ngIf="movie">
+  <button class="btn btn-outline-warning mx-1 my-2" (click)="return()">Return</button>
+  <div class="row">
+    <div class="col-md-4">
+      <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="{{ movie.title }} Poster">
+    </div>
+    <div class="col-md-8 p-5">
+      <h2 style="font-weight: 700; font-style: italic;">{{ movie.title }}</h2>
+      <pre><strong>Release : </strong>{{ movie.release_date }}    |   {{movie.popularity | movie}}   |   {{movie.vote_average}}</pre>
+      <p><strong></strong> {{ movie.overview }}</p>
+      <p><strong>Other Details :</strong> </p>
+      <pre><strong>vote count :</strong> <span style="color: brown;">{{movie.vote_count}}</span></pre>
+      <p><strong>Language : </strong>{{movie.original_language}}</p>
+      <!-- <p><strong>Budget:</strong> {{ movie.popularity | currency:'USD':'symbol':'1.2-2' }}</p>
+      <p><strong>Revenue:</strong> {{ movie.revenue | currency:'USD':'symbol':'1.2-2' }}</p> -->
+    </div>
+  </div>
+</div>
